@@ -45,3 +45,13 @@ $app->action();
 $appWeb = new Application;
 $appWeb->setLogger(new BrowserLogger);
 $appWeb->action();
+
+function filterBy($filterType, $elements) {
+	$filtered = [];
+
+	foreach($elements->e as $element) {
+		if ($element->type() == $filterType) {
+			$filtered[] = $element;
+		}
+	}
+}
